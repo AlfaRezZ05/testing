@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Moving Button</title>
+  <style>
+    #movingButton {
+      position: absolute;
+      width: 100px;
+      height: 40px;
+      background-color: #3498db;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<h1>Aku GAY!</h1>
+<body>
+
+<button><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu_rmoLNiRA49gZSR2ASGee-CUxcWWZWM_qg&s">IYA HEHE</a></button>
+<button id="movingButton" onmouseover="moveButton()">NGGA</button>
+
+<script>
+  function moveButton() {
+    var button = document.getElementById("movingButton");
+    
+    var maxX = window.innerWidth - button.clientWidth;
+    var maxY = window.innerHeight - button.clientHeight;
+
+    var newX = Math.floor(Math.random() * maxX);
+    var newY = Math.floor(Math.random() * maxY);
+
+    button.style.transform = "translate(" + newX + "px," + newY + "px)";
+  }
+</script>
+
+</body>
+</html>
