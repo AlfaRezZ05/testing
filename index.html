@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Random Moving Button</title>
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
     #movingButton {
       position: absolute;
       width: 100px;
       height: 40px;
       background-color: #3498db;
       color: #fff;
+      border: none;
       cursor: pointer;
-      transition: transform 0.5s ease-in-out;
+      transition: left 0.3s, top 0.3s;
+    }
+
+    button a {
+      text-decoration: none;
+      color: white;
     }
   </style>
 </head>
-<h1>Aku GAY!</h1>
 <body>
 
-<button><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu_rmoLNiRA49gZSR2ASGee-CUxcWWZWM_qg&s">IYA HEHE</a></button>
-<button id="movingButton" onmouseover="moveButton()">NGGA</button>
+<h1>Aku GAY!</h1>
+
+<button>
+  <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu_rmoLNiRA49gZSR2ASGee-CUxcWWZWM_qg&s">IYA HEHE</a>
+</button>
+
+<button id="movingButton" onmouseover="moveButton()" ontouchstart="moveButton()">NGGA</button>
 
 <script>
   function moveButton() {
-    var button = document.getElementById("movingButton");
-    
-    var maxX = window.innerWidth - button.clientWidth;
-    var maxY = window.innerHeight - button.clientHeight;
+    const button = document.getElementById("movingButton");
 
-    var newX = Math.floor(Math.random() * maxX);
-    var newY = Math.floor(Math.random() * maxY);
+    const maxX = window.innerWidth - button.offsetWidth;
+    const maxY = window.innerHeight - button.offsetHeight;
 
-    button.style.transform = "translate(" + newX + "px," + newY + "px)";
+    const newX = Math.floor(Math.random() * maxX);
+    const newY = Math.floor(Math.random() * maxY);
+
+    button.style.left = newX + "px";
+    button.style.top = newY + "px";
   }
 </script>
 
